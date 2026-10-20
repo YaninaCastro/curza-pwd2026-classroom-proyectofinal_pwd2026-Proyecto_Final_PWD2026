@@ -1,0 +1,33 @@
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #263238;
+  background-color: #f5f7fa;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/*:root: establece la tipografía y los colores base de la aplicación.
+* { box-sizing: border-box; }: hace más predecible el cálculo de tamaños de los elementos.
+body: elimina el margen que el navegador agrega por defecto y permite que la página ocupe al menos toda la altura de la ventana.
+button, input...: hace que los controles del formulario utilicen la misma tipografía que el resto del sitio.*/
