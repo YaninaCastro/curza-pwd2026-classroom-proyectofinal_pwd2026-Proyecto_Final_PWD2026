@@ -1,4 +1,4 @@
-
+<!--contenedor principal de la aplicación.-->
 
 <template>
   <div id="app">
@@ -6,6 +6,11 @@
   </div>
 </template>
 
- <!--<RouterView /> es el espacio donde Vue Router muestra la 
- página correspondiente a la URL. Por ejemplo, más adelante ahí
-  aparecerá la pantalla de inicio de sesión o el menú principal.-->
+ <!--<RouterView /> Es el componente de Vue Router que funciona como espacio dinámico 
+donde se renderiza la vista correspondiente a la URL.
+Por ejemplo:
+- Al ingresar a /login, muestra el componente de login.
+- Al ingresar a /home, muestra HomeView.vue.
+- Al ingresar a /duenos, muestra la vista correspondiente a dueños.
+No se necesita importar manualmente cada vista en App.vue, porque Vue Router
+se encarga de mostrarla según la configuración de las rutas..-->
