@@ -6,8 +6,8 @@ import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 import router from './routes'
 
-const pinia = createPinia();
-pinia.use(piniaPluginPersistedstate); 
+const pinia = createPinia(); //crea la instancia de Pinia.
+pinia.use(piniaPluginPersistedstate); //registra el plugin de persistencia.
 const app = createApp(App) //crea la aplicación Vue usando App.vue como componente principal.
 
 
