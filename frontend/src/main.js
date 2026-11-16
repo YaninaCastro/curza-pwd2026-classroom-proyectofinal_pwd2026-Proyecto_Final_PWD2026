@@ -11,7 +11,7 @@ pinia.use(piniaPluginPersistedstate); //registra el plugin de persistencia.
 const app = createApp(App) //crea la aplicación Vue usando App.vue como componente principal.
 
 
-  app.use(pinia) //habilita Pinia para compartir estado entre componentes, por ejemplo, los datos del usuario que inició sesión
-  app.use(router) //conecta Vue Router para navegar entre páginas sin recargar todo el sitio.
-  app.mount('#app') // 
+  app.use(pinia) //habilita Pinia 
+  app.use(router) //habilita Vue Router
+  app.mount('#app') //monta la aplicación dentro del elemento HTML con identificador app.
 
