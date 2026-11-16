@@ -48,6 +48,16 @@ router.beforeEach((to) => {
   return true;
 });
 
+//Navigation Guard de Vue Router.
+//funcionamiento:
+//1. Antes de cambiar de ruta, ejecuta beforeEach.
+//2. Obtiene el store de autenticación mediante useAuthStore().
+//3. Comprueba si la ruta requiere autenticación.
+//4. Si requiere autenticación y el usuario no está autenticado, lo redirige al login.
+//5. Si cumple la condición, permite continuar.
+//Una distinción importante: esta protección controla la navegación del frontend. 
+//La seguridad real de las operaciones sigue estando en el backend, mediante el decorador rol_access.
+
 export default router
 
 //routes: contiene las rutas disponibles y qué componente muestra cada una.
