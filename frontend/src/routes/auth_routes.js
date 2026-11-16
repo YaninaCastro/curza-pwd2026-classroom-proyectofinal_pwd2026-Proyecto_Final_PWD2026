@@ -1,3 +1,4 @@
+//Este archivo define la ruta correspondiente al inicio de sesión.
 const auth_routes = [
     {
         path: '/login',
