@@ -86,5 +86,5 @@ apiAxios.interceptors.response.use(
 
 
 /*Con Content-Type: Flask puede interpretar correctamente el cuerpo JSON cuando la petición lo requiere.
-Sin esa línea: Axios normalmente establece el encabezado adecuado cuando enviás un objeto JavaScript como JSON. Por eso, 
+Sin esa línea: Axios normalmente establece el encabezado adecuado cuando se envía un objeto JavaScript como JSON. Por eso, 
 en muchos casos, la petición seguiría funcionando igual. */
