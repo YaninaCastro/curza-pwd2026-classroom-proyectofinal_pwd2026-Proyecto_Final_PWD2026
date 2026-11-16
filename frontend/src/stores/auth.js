@@ -3,9 +3,11 @@ import AuthServices from "../services/AuthService.js";
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-export const useAuthStore = defineStore(
-  "auth",
-  () => {
+export const useAuthStore = defineStore( //defineStore() permite crear un Store de Pinia.
+  "auth", //"auth" es el identificador del Store.
+  () => { //La función define los estados y métodos que estarán disponibles.
+
+    //Estados del Store: Cada variable representa un dato que puede ser compartido por los componentes de Vue.
     const auth_user = ref(null);
     const is_authenticated = ref(false);
     const jwt = ref("");
@@ -15,6 +17,8 @@ export const useAuthStore = defineStore(
     const errors = ref([]);
     const status_code = ref(null);
 
+
+    //Este método recibe los datos ingresados por el usuario y llama al servicio de autenticación.
     async function login(user) {
       errors.value = [];
       const success = await service.login(user);
@@ -34,6 +38,7 @@ export const useAuthStore = defineStore(
       return true;
     }
 
+    //Se encarga de cerrar la sesión en el frontend, limpiando los datos almacenados en el Store.
     function logout() {
       auth_user.value = null;
       is_authenticated.value = false;
@@ -57,3 +62,9 @@ export const useAuthStore = defineStore(
   },
   { persist: true },
 );
+
+//Esta configuración habilita la persistencia del Store mediante pinia-plugin-persistedstate.
+//Esto significa que, al recargar la página, los datos del Store pueden recuperarse sin que el 
+//usuario tenga que iniciar sesión nuevamente.
+//En tu caso, es importante porque permite conservar el estado de autenticación y los tokens entre recargas.
+//B. routes/auth_routes.js – Ruta de autenticación
