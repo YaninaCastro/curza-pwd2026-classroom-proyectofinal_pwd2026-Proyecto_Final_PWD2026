@@ -52,15 +52,9 @@ function vuelveAlListado() {
   mascotaId.value = null;
   actualizarLista.value++;
 }
-/*Qué cambiamos y por qué?
+/*
 - edita(id) recibe el ID de la mascota seleccionada.
 - mostrarEdicion decide si se muestra el listado o el formulario de edición.
 - vuelveAlListado() vuelve al listado después de guardar o cancelar y lo actualiza para mostrar los cambios.
-Ahora probalo
-1. Entrá a /mascotas.
-2. Presioná Editar en una mascota.
-3. Cambiá su nombre y guardá.
-Si aparece un error al guardar, pasame el mensaje exacto. Puede que tengamos que ajustar el update del backend, 
-especialmente los campos fecha_nto y dueno_id. */
 
 </script>
