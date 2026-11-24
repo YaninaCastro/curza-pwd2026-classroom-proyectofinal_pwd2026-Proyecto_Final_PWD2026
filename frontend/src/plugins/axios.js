@@ -3,7 +3,8 @@ import axios from "axios";   //import axios from "axios": importa la herramienta
 import { useAuthStore } from "../stores/auth.js";
 
 
-export const apiAxios = axios.create({    //export const api: permite importar esta misma instancia desde otros archivos, sin repetir la configuración/axios.create(...): crea una instancia de Axios con una configuración común.
+export const apiAxios = axios.create({    //export const api: permite importar esta misma instancia desde otros archivos, 
+  //sin repetir la configuración/axios.create(...): crea una instancia de Axios con una configuración común.
   baseURL: "http://localhost:5001",  //baseURL: establece la dirección base de tu backend Flask
   timeout: 10000,  //límite de espera de 10 segundos.
   headers: {
