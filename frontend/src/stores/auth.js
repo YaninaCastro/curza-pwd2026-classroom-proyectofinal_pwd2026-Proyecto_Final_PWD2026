@@ -66,5 +66,5 @@ export const useAuthStore = defineStore( //defineStore() permite crear un Store 
 //Esta configuración habilita la persistencia del Store mediante pinia-plugin-persistedstate.
 //Esto significa que, al recargar la página, los datos del Store pueden recuperarse sin que el 
 //usuario tenga que iniciar sesión nuevamente.
-//En tu caso, es importante porque permite conservar el estado de autenticación y los tokens entre recargas.
+//En éste caso, es importante porque permite conservar el estado de autenticación y los tokens entre recargas.
 //B. routes/auth_routes.js – Ruta de autenticación
