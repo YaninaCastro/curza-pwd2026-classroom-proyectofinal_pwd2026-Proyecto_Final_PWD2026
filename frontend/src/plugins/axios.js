@@ -9,16 +9,32 @@ export const apiAxios = axios.create({    //export const api: permite importar e
   timeout: 10000,  //límite de espera de 10 segundos.
   headers: {
     "Content-Type": "application/json", //indica que enviaremos datos en formato JSON cuando corresponda.
-  },
+  }, //Los headers son encabezados HTTP.
 });
 
 // Agrega el access token a las peticiones.
-apiAxios.interceptors.request.use((config) => {
-  const jwt = localStorage.getItem("auth");
-
+apiAxios.interceptors.request.use((config) => {   //Un interceptor es una función que permite intervenir en una solicitud o respuesta
+  //antes de que Axios la procese normalmente.
+  //request: indica que queremos interceptar las peticiones, interviene antes de enviar una solicitud.
+  //use(): registra una función que Axios ejecutará antes de enviar cada petición.
+  //¿Qué es config? Es un objeto que contiene información sobre la petición que Axios está por enviar.
+  //config es un parámetro que Axios le entrega automáticamente a la función.
+ //No hay que crearlo ni declararlo previamente.
+  //ejemplo: apiAxios.get("/usuarios"), Axios prepara internamente un objeto similar a este:
+  //{method: "get",
+  //url: "/usuarios",
+  //baseURL: "http://localhost:5001",
+  //headers: {...},
+  //timeout: 10000}
+  //Se podría llamar de otra manera, ej: apiAxios.interceptors.request.use((solicitud) => {
+  const jwt = localStorage.getItem("auth"); //Acá estás buscando en el almacenamiento local del navegador (LocalStorage) un elemento cuya clave sea "auth"
+//LocalStorage guarda información en formato texto
+//localStorage es una funcionalidad que ya viene incorporada en los navegadores web.
+//No se necesitá instalarla, crearla ni importarla
   if (jwt) {
     try {
       const auth = JSON.parse(jwt);
+      //JSON.parse() convierte ese texto JSON en un objeto, porque LocalStorage almacena los valores como texto.
 
       if (auth.jwt) {
         config.headers.Authorization = `Bearer ${auth.jwt}`;
