@@ -38,7 +38,7 @@ apiAxios.interceptors.request.use((config) => {   //Un interceptor es una funci�
 
       if (auth.jwt) {
         config.headers.Authorization = `Bearer ${auth.jwt}`;
-      }
+      } //Authorization es un encabezado HTTP que utilizamos para enviar información de autenticación definido por el estándar HTTP
     } catch {
       // No se pudo leer la sesión guardada.
     }
@@ -74,14 +74,17 @@ apiAxios.interceptors.response.use(
     }
 
     try {
-      const respuesta = await axios.post(
+      const respuesta = await axios.post(  //¿Por qué axios.post y no apiAxios.post?
+        //Porque estamos haciendo una solicitud independiente para renovar el token.
+        //Podríamos utilizar apiAxios, pero hay que tener cuidado porque tiene interceptores que podrían volver a ejecutarse.
+        //Usar axios.post directamente evita que esta solicitud pase por los interceptores de apiAxios.
         "http://localhost:5001/auth/refresh",
         {},
         {
           timeout: 10000,
           headers: {
             Authorization: `Bearer ${authStore.refresh_token}`,
-          },
+          }, //esta vez enviamos el refresh token en lugar del access token.
         }
       );
 
